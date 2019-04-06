@@ -262,6 +262,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/easy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ludi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TinyPig">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/06/easy/" itemprop="url">4 easy</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-06T17:31:14-04:00">
+                2019-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1 Two Sum: 用HashMap， key存index， value存（sum-nums[index]), 如果遇到num在hashmap里出现过 说明两个是pair 所以输出hashmap.get(num) 和num本身的index</p>
+<p>7 Reverse Integer: reverse的数学方法是<br>    while(x!=0){<br>        reverse=reverse*10+x%10;<br>        x=x/10；<br>    }<br>    注意这几个都是int类型</p>
+<pre><code>Integer.MAX_VALUE=2147483647
+Integet.MIN_VALUE= - 2147483648
+int overflow可能会出现在rev=rev*10+x%10的时候, 讨论rev更新前。有两种情况 一种是rev本身就超了max/10 or min/10 还有一种是rev==max/10 or mmin/10 而且 要加的x%10导致溢出 所以对于MAX:x%10&gt;7会超 对于MIN： x%10&lt;-8会超
+</code></pre><p>9 Palindrome Number<br>  一个数从左到右和从右到左看都是一样的<br>  负的肯定不行；<br>  正的reverse一下 看看一样不一样就完了</p>
+<p>26 remove duplicate from sorted array<br>   双指针 流程图如下 还要多熟悉<br>   <img src="https://cdn-images-1.medium.com/max/1600/1*bcAR3aOxilTn1MKYKIWhlA.jpeg" alt></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -425,7 +551,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
