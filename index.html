@@ -262,6 +262,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/MyVeryFirstAcceptance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ludi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TinyPig">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/07/MyVeryFirstAcceptance/" itemprop="url">MyVeryFirstAcceptance!</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T19:33:10-04:00">
+                2019-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="I-got-my-very-first-acceptance-today"><a href="#I-got-my-very-first-acceptance-today" class="headerlink" title="I got my very first acceptance today!!!"></a>I got my very first acceptance today!!!</h2><p>This is the very first solution I come up with myself and write the code independently! So excited! Although my code has 30 rows and the solution on leetcode has only 10 row…</p>
+<p>Check my code for Remove element from a array.</p>
+<pre><code>class Solution {
+    public int removeElement(int[] nums, int val) {
+        if(nums.length==0){
+            return 0;
+        }    
+    int j=-1, temp, len=0, i;
+    for (i=0;i&lt;nums.length; i++){
+        if(nums[i]==val){
+            j=i;
+            while(j&lt;nums.length-1){
+                j++;
+                if(nums[j]!=val){
+
+                    temp=nums[j];
+                    nums[j]=nums[i];
+                    nums[i]=temp;
+                    break;
+                }
+            }
+
+        }
+    }
+
+    while(len&lt;nums.length){
+       if(nums[len]==val){
+            break;
+        }
+     len++;
+    }
+
+    return len;
+}
+</code></pre><p>Still a long way to go. 加油！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/easy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -549,7 +703,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -557,6 +711,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>
