@@ -262,6 +262,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/1medium3easy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ludi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TinyPig">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/09/1medium3easy/" itemprop="url">1medium3easy</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-09T21:41:53-04:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="35-Search-Insert-Position"><a href="#35-Search-Insert-Position" class="headerlink" title="35 Search Insert Position"></a>35 Search Insert Position</h2><p>Binary search</p>
+<p>如果没找到target需要insert的话 insert的位置就是最后一个low。可以反过来想，结束查找的时候，low=high+1，所以target就要放在high和low之间，所以index是low。</p>
+<h2 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53 Maximum Subarray"></a>53 Maximum Subarray</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Initialize:</span><br><span class="line">    max_so_far = 0</span><br><span class="line">    max_ending_here = 0</span><br><span class="line"></span><br><span class="line">Loop for each element of the array</span><br><span class="line">  (a) max_ending_here = max_ending_here + a[i]</span><br><span class="line">  (b) if(max_ending_here &lt; 0)</span><br><span class="line">            max_ending_here = 0</span><br><span class="line">  (c) if(max_so_far &lt; max_ending_here)</span><br><span class="line">            max_so_far = max_ending_here</span><br><span class="line">return max_so_far</span><br></pre></td></tr></table></figure>
+<p>如果nums[]所有element都是negetive，就返回最大的element。</p>
+<h2 id="66-Plus-one"><a href="#66-Plus-one" class="headerlink" title="66 Plus one"></a>66 Plus one</h2><p>注意输入输出就行了 用一个flag表示进位</p>
+<h2 id="402-Remove-k-digits"><a href="#402-Remove-k-digits" class="headerlink" title="402 Remove k digits"></a>402 Remove k digits</h2><p>贪心算法 每一步操作都采用对于当前情况最优的操作</p>
+<p>维持一个不严格的递增stack(可以等于)，遍历nums，如果发现nums[i]&lt;nums[i-1]，则stack.pop(nums[i-1]),   stack.push(nums[i])  这是为了在高位去掉大数。</p>
+<p>如果递减序列都删完了还不够k个，就从栈顶往下删(因为大的数都在栈顶呀)</p>
+<p>Example:[1,4,3,2,7,8]  k=4</p>
+<p>先删掉递减序列=&gt;[1,7,8] 还要再删一个 肯定是删8最优。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/MyVeryFirstAcceptance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -730,7 +881,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -752,7 +903,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
