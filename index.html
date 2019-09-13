@@ -262,6 +262,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/12Sep-48-53-54/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ludi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="console.log('Goodbye World!')">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/12/12Sep-48-53-54/" itemprop="url">12Sep 48 53 54</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-12T22:41:46-04:00">
+                2019-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="48-Rotate-Image"><a href="#48-Rotate-Image" class="headerlink" title="48 Rotate Image"></a>48 Rotate Image</h2><p>基本思路是先按照对角线交换，然后水平或垂直交换<br>注意交换的时候不要遍历所有元素，否则换过去以后又换回来了， 等于没换<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = matrix.length;</span><br><span class="line">		<span class="comment">//左下到右上对角线交换</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;matrix.length; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n-<span class="number">1</span>-i; j++) &#123;<span class="comment">//注意只遍历对角线上半边</span></span><br><span class="line">				<span class="keyword">int</span> temp = matrix[i][j];</span><br><span class="line">				matrix[i][j] = matrix[n-<span class="number">1</span>-j][n-<span class="number">1</span>-i];</span><br><span class="line">				matrix[n-<span class="number">1</span>-j][n-<span class="number">1</span>-i]=temp;</span><br><span class="line">                <span class="comment">//如果是左上右下的对角线 就是a[i][j]和a[j][i]换</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//水平镜像</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;matrix.length/<span class="number">2</span>; i++) &#123;<span class="comment">//注意遍历的范围</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;matrix.length; j++) &#123;</span><br><span class="line">				<span class="keyword">int</span> temp = matrix[i][j];</span><br><span class="line">				matrix[i][j] = matrix[n-<span class="number">1</span>-i][j];</span><br><span class="line">				matrix[n-<span class="number">1</span>-i][j] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53 Maximum Subarray"></a>53 Maximum Subarray</h2><p>中心思想就是设一个当前加到的currSum，如果currSum&lt;=0的话，前面的subarray就不要了（让currSum=0），从后面一位开始当成一个新的subArray；如果currSum大于零的话，就把后面一位也并到当前的subArray里，还维持这个subArray；<br>注意考虑整个数组都是负数的情况（maxSum&lt;0）,这个时候输出一次最大的负数就行了</p>
+<h2 id="54-Spiral-Matrix"><a href="#54-Spiral-Matrix" class="headerlink" title="54 Spiral Matrix"></a>54 Spiral Matrix</h2><p>一层一层的打印，先初始化rowStart, rowEnd, colStart, colEnd, 剥掉一层以后把这几个end start都往里面缩<br><img src="/img/spiralOrder.png" alt><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(matrix.length == <span class="number">0</span>) &#123;<span class="keyword">return</span> ans;&#125;<span class="comment">//如果是空的就返回一个空ans</span></span><br><span class="line">        <span class="keyword">int</span> rowStart = <span class="number">0</span>, rowEnd = matrix.length -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> colStart = <span class="number">0</span>, colEnd = matrix[<span class="number">0</span>].length -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (rowStart&lt;=rowEnd &amp;&amp; colStart&lt;=colEnd) &#123;</span><br><span class="line">            <span class="comment">//必须是end&lt;=start，才有能剥的一层 （等于的话就是还剩最后一个数）</span></span><br><span class="line">        	<span class="keyword">for</span>(<span class="keyword">int</span> i=colStart; i&lt;=colEnd; i++) &#123;</span><br><span class="line">        		ans.add(matrix[rowStart][i]);</span><br><span class="line">        	&#125;</span><br><span class="line">        	<span class="keyword">for</span>(<span class="keyword">int</span> i=rowStart+<span class="number">1</span>; i&lt;=rowEnd; i++) &#123;</span><br><span class="line">        		ans.add(matrix[i][colEnd]);</span><br><span class="line">        	&#125;</span><br><span class="line">        	<span class="keyword">if</span>(colStart&lt;colEnd &amp;&amp; rowStart&lt;rowEnd) &#123;</span><br><span class="line">                <span class="comment">//从左往右和从下往上的时候，start&lt;end，否则会重复输出？？？</span></span><br><span class="line">        		<span class="keyword">for</span>(<span class="keyword">int</span> i = colEnd -<span class="number">1</span>; i&gt;colStart; i--) &#123;</span><br><span class="line">        			ans.add(matrix[rowEnd][i]);</span><br><span class="line">        		&#125;</span><br><span class="line">        		<span class="keyword">for</span>(<span class="keyword">int</span> i = rowEnd; i&gt;rowStart;i--) &#123;</span><br><span class="line">        			ans.add(matrix[i][colStart]);</span><br><span class="line">        		&#125;</span><br><span class="line">        	&#125;</span><br><span class="line">        	colStart++;</span><br><span class="line">        	colEnd--;</span><br><span class="line">        	rowStart++;</span><br><span class="line">        	rowEnd--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure></p>
+<h3 id="二维数组太强了！！"><a href="#二维数组太强了！！" class="headerlink" title="二维数组太强了！！"></a>二维数组太强了！！</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/11/11Sep-15-26-33-34/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1162,7 +1306,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1184,7 +1328,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
