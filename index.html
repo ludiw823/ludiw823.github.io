@@ -262,6 +262,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/22/22Sep-88-105-118-121/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ludi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="console.log('Goodbye World!')">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/22/22Sep-88-105-118-121/" itemprop="url">22Sep 88 105 118 121</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-22T22:28:38-04:00">
+                2019-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="88-Merge-Sorted-Array"><a href="#88-Merge-Sorted-Array" class="headerlink" title="88 Merge Sorted Array"></a>88 Merge Sorted Array</h2><p>从后往前排，i指向nums1的最后一个数，j指向nums2的最后一个数，k指向merge之后array的最后一位<br>注意最后是都merge到nums1本来的存储空间里，所以如果j&lt;0就可以return了</p>
+<h2 id="105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal"><a href="#105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal" class="headerlink" title="105 Construct Binary Tree from Preorder and Inorder Traversal"></a>105 Construct Binary Tree from Preorder and Inorder Traversal</h2><p>preOrder: 根 左 右。考察到一个节点后，即刻输出该节点的值，并继续遍历其左右子树。<br>inOrder: 左 根 右。考察到一个节点后，将其暂存，遍历完左子树后，再输出该节点的值，然后遍历右子树<br>The basic idea is here:<br>Say we have 2 arrays, PRE and IN.<br>Preorder traversing implies that PRE[0] is the root node.<br>Then we can find this PRE[0] in IN, say it’s IN[5].<br>Now we know that IN[5] is root, so we know that IN[0] - IN[4] is on the left side, IN[6] to the end is on the right side.<br>Recursively doing this on subarrays, we can build a tree out of it :)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> helper(<span class="number">0</span>, <span class="number">0</span>, inorder.length - <span class="number">1</span>, preorder, inorder);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">helper</span><span class="params">(<span class="keyword">int</span> preStart, <span class="keyword">int</span> inStart, <span class="keyword">int</span> inEnd, <span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (preStart &gt; preorder.length - <span class="number">1</span> || inStart &gt; inEnd) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    TreeNode root = <span class="keyword">new</span> TreeNode(preorder[preStart]);</span><br><span class="line">    <span class="keyword">int</span> inIndex = <span class="number">0</span>; <span class="comment">// Index of current root in inorder</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = inStart; i &lt;= inEnd; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (inorder[i] == root.val) &#123;</span><br><span class="line">            inIndex = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    root.left = helper(preStart + <span class="number">1</span>, inStart, inIndex - <span class="number">1</span>, preorder, inorder);</span><br><span class="line">    root.right = helper(preStart + inIndex - inStart + <span class="number">1</span>, inIndex + <span class="number">1</span>, inEnd, preorder, inorder);</span><br><span class="line">    <span class="comment">//preStart + (inIdex-inStart) =&gt; 去掉左边的子节点 然后+1 就是新的preStart</span></span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="118-Pascal’s-Triangle"><a href="#118-Pascal’s-Triangle" class="headerlink" title="118 Pascal’s Triangle"></a>118 Pascal’s Triangle</h2><p>注意ArrayList.add()要顺序赋值，不能a.add(0,1)以后直接a.add(5,1);需要a.add(4,x)以后才能a.add(5,1)<br>a.get(index)可以获得index处的value</p>
+<h2 id="121-Best-Time-to-Buy-and-Sell-Stock"><a href="#121-Best-Time-to-Buy-and-Sell-Stock" class="headerlink" title="121 Best Time to Buy and Sell Stock"></a>121 Best Time to Buy and Sell Stock</h2><p>可以先根据价格数组生成一个差值数组，转化为求差值数组的max subarray问题<br>注意检查价格数组可能是空数组</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/18/18Sep-56-62-66/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1595,7 +1741,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1617,7 +1763,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
