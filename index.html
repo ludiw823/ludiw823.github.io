@@ -262,6 +262,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/23/23Sep-122-152-162-169/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ludi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="console.log('Goodbye World!')">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/23/23Sep-122-152-162-169/" itemprop="url">23Sep 122 152 162 169</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-23T22:49:13-04:00">
+                2019-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="122-Best-Time-to-Buy-and-Sell-Stock-II"><a href="#122-Best-Time-to-Buy-and-Sell-Stock-II" class="headerlink" title="122 Best Time to Buy and Sell Stock II"></a>122 Best Time to Buy and Sell Stock II</h2><p>找升序列，只要prices[i+1]&gt;prices[i],就可以买卖，因为差值大于0。</p>
+<h2 id="152-Maximum-Product-Subarray"><a href="#152-Maximum-Product-Subarray" class="headerlink" title="152 Maximum Product Subarray"></a>152 Maximum Product Subarray</h2><p>keep两个currProduction，一个是currMax，一个是currMin，如果nums[i]小于0，则交换currMax和currMin，greedy做。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> currMax = max;</span><br><span class="line">        <span class="keyword">int</span> currMin = max;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;nums.length)&#123;</span><br><span class="line">            currMax = currMax * nums[i];</span><br><span class="line">            currMin = currMin * nums[i];</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = currMax;</span><br><span class="line">                currMax = currMin;</span><br><span class="line">                currMin = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="comment">//注意这两个nums[i]和curr比的if，是为了解决0的问题！！！！！</span></span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;currMax)&#123;currMax = nums[i];&#125;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&lt;currMin)&#123;currMin = nums[i];&#125;</span><br><span class="line">            <span class="keyword">if</span>(currMax&gt;max)&#123;</span><br><span class="line">                max = currMax;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="162-Find-Peak-Element"><a href="#162-Find-Peak-Element" class="headerlink" title="162 Find Peak Element"></a>162 Find Peak Element</h2><p>基本思想是用二分法查找，如果是升序列，就往右边找，如果是降序列，就往左边找。<br>mid = lo + (hi - lo)/2   根据整除的性质 nums[mid+1]肯定是存在的，所以二分法查找的时候只比较nums[mid]和nums[mid+1]。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findPeakElement</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hi = nums.length -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = lo + (hi-lo)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(hi&gt;lo)&#123;</span><br><span class="line">            <span class="comment">//这种情况nums[mid]处于一个升序列的中间，肯定不是peak</span></span><br><span class="line">            <span class="keyword">if</span>(nums[mid]&lt;nums[mid+<span class="number">1</span>])&#123;</span><br><span class="line">                lo = mid +<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//注意这里nums[mid]&gt;nums[mid+1],所以nums[mid]有可能是peak，要进一步判断</span></span><br><span class="line">                <span class="keyword">if</span>(mid-<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; nums[mid-<span class="number">1</span>]&lt;nums[mid])&#123;</span><br><span class="line">                    <span class="keyword">return</span> mid;</span><br><span class="line">                &#125;</span><br><span class="line">                hi = mid -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            mid = lo + (hi-lo)/<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="169-Majority-Element"><a href="#169-Majority-Element" class="headerlink" title="169 Majority Element"></a>169 Majority Element</h2><p>采用Boyer More Voting Algorithm。基本思想是，在数组中找一对不相同的数，把他们删掉，最后都删完了剩下的就是Majority。<br>还可以扩展，比如找数量&gt;3/n的majority。<a href="https://www.jianshu.com/p/dfd676b71ef0" target="_blank" rel="noopener">一个参考链接</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/22/22Sep-88-105-118-121/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1562,152 +1707,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/easy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ludi">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="console.log('Goodbye World!')">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/06/easy/" itemprop="url">4 easy</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-06T17:31:14-04:00">
-                2019-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1 Two Sum:"></a>1 Two Sum:</h2><p>用HashMap， key存index， value存（sum-nums[index]), 如果遇到num在hashmap里出现过 说明两个是pair 所以输出hashmap.get(num) 和num本身的index</p>
-<h2 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7 Reverse Integer"></a>7 Reverse Integer</h2><p>reeverse的数学方法是 </p>
-<p>(<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">​	while(x!=0)&#123;</span><br><span class="line">​		reverse=reverse*10+x%10;</span><br><span class="line">​		x=x/10；</span><br><span class="line">​	&#125;</span><br><span class="line"></span><br><span class="line">(```)</span><br><span class="line"></span><br><span class="line">​	注意这几个都是int类型</span><br><span class="line">​     </span><br><span class="line"></span><br><span class="line">```en</span><br><span class="line">Integer.MAX_VALUE=2147483647</span><br><span class="line">Integet.MIN_VALUE= - 2147483648</span><br><span class="line">int overflow可能会出现在rev=rev*10+x%10的时候, 讨论rev更新前。有两种情况 一种是rev本身就超了max/10 or min/10 还有一种是rev==max/10 or mmin/10 而且 要加的x%10导致溢出 所以对于MAX:x%10&gt;7会超 对于MIN： x%10&lt;-8会超</span><br></pre></td></tr></table></figure></p>
-<h2 id="9-Palindrome-Number"><a href="#9-Palindrome-Number" class="headerlink" title="9 Palindrome Number"></a>9 Palindrome Number</h2><p>  一个数从左到右和从右到左看都是一样的<br>  负的肯定不行；<br>  正的reverse一下 看看一样不一样就完了</p>
-<h2 id="26-remove-duplicate-from-sorted-array"><a href="#26-remove-duplicate-from-sorted-array" class="headerlink" title="26 remove duplicate from sorted array"></a>26 remove duplicate from sorted array</h2><p>   双指针 流程图如下 还要多熟悉<br>   <img src="https://cdn-images-1.medium.com/max/1600/1*bcAR3aOxilTn1MKYKIWhlA.jpeg" alt></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1760,7 +1759,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

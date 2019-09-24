@@ -262,6 +262,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/easy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ludi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="console.log('Goodbye World!')">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/06/easy/" itemprop="url">4 easy</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-06T17:31:14-04:00">
+                2019-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1 Two Sum:"></a>1 Two Sum:</h2><p>用HashMap， key存index， value存（sum-nums[index]), 如果遇到num在hashmap里出现过 说明两个是pair 所以输出hashmap.get(num) 和num本身的index</p>
+<h2 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7 Reverse Integer"></a>7 Reverse Integer</h2><p>reeverse的数学方法是 </p>
+<p>(<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">​	while(x!=0)&#123;</span><br><span class="line">​		reverse=reverse*10+x%10;</span><br><span class="line">​		x=x/10；</span><br><span class="line">​	&#125;</span><br><span class="line"></span><br><span class="line">(```)</span><br><span class="line"></span><br><span class="line">​	注意这几个都是int类型</span><br><span class="line">​     </span><br><span class="line"></span><br><span class="line">```en</span><br><span class="line">Integer.MAX_VALUE=2147483647</span><br><span class="line">Integet.MIN_VALUE= - 2147483648</span><br><span class="line">int overflow可能会出现在rev=rev*10+x%10的时候, 讨论rev更新前。有两种情况 一种是rev本身就超了max/10 or min/10 还有一种是rev==max/10 or mmin/10 而且 要加的x%10导致溢出 所以对于MAX:x%10&gt;7会超 对于MIN： x%10&lt;-8会超</span><br></pre></td></tr></table></figure></p>
+<h2 id="9-Palindrome-Number"><a href="#9-Palindrome-Number" class="headerlink" title="9 Palindrome Number"></a>9 Palindrome Number</h2><p>  一个数从左到右和从右到左看都是一样的<br>  负的肯定不行；<br>  正的reverse一下 看看一样不一样就完了</p>
+<h2 id="26-remove-duplicate-from-sorted-array"><a href="#26-remove-duplicate-from-sorted-array" class="headerlink" title="26 remove duplicate from sorted array"></a>26 remove duplicate from sorted array</h2><p>   双指针 流程图如下 还要多熟悉<br>   <img src="https://cdn-images-1.medium.com/max/1600/1*bcAR3aOxilTn1MKYKIWhlA.jpeg" alt></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +575,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
