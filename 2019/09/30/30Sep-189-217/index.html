@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="array,HashSet,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="never waste today">
-<meta property="og:type" content="website">
-<meta property="og:title" content="console.log(&#39;Goodbye World!&#39;)">
-<meta property="og:url" content="http://yoursite.com/tags/two-pointer/index.html">
+<meta name="description" content="181 rotate array逆向输出，reverse三次。注意如果input[1,2,3] k=3; 输出[3,1,2];所以要先对k进行操作，k = k%nums.length 217 Contains Duplicate注意分析time complexity 和 space complexity 之间的trade off  先Arrays.sort 然后循环一边看是不是有重复的time O">
+<meta name="keywords" content="array,HashSet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="30Sep-189-217">
+<meta property="og:url" content="http://yoursite.com/2019/09/30/30Sep-189-217/index.html">
 <meta property="og:site_name" content="console.log(&#39;Goodbye World!&#39;)">
-<meta property="og:description" content="never waste today">
+<meta property="og:description" content="181 rotate array逆向输出，reverse三次。注意如果input[1,2,3] k=3; 输出[3,1,2];所以要先对k进行操作，k = k%nums.length 217 Contains Duplicate注意分析time complexity 和 space complexity 之间的trade off  先Arrays.sort 然后循环一边看是不是有重复的time O">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-30T23:56:46.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="console.log(&#39;Goodbye World!&#39;)">
-<meta name="twitter:description" content="never waste today">
+<meta name="twitter:title" content="30Sep-189-217">
+<meta name="twitter:description" content="181 rotate array逆向输出，reverse三次。注意如果input[1,2,3] k=3; 输出[3,1,2];所以要先对k进行操作，k = k%nums.length 217 Contains Duplicate注意分析time complexity 和 space complexity 之间的trade off  先Arrays.sort 然后循环一边看是不是有重复的time O">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/two-pointer/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/30/30Sep-189-217/">
 
 
 
 
 
-  <title>Tag: two pointer | console.log('Goodbye World!')</title>
+  <title>30Sep-189-217 | console.log('Goodbye World!')</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,104 +249,177 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>two pointer<small>Tag</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/30/30Sep-189-217/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ludi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="console.log('Goodbye World!')">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/09/11/11Sep-15-26-33-34/" itemprop="url">
-              
-                <span itemprop="name">11Sep 15, 26, 33, 34</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">30Sep-189-217</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-11T22:51:53-04:00" content="2019-09-11">
-          09-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-30T19:50:00-04:00">
+                2019-09-30
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/07/MyVeryFirstAcceptance/" itemprop="url">
-              
-                <span itemprop="name">MyVeryFirstAcceptance!</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-07T19:33:10-04:00" content="2019-04-07">
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/06/easy/" itemprop="url">
-              
-                <span itemprop="name">4 easy</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T17:31:14-04:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="181-rotate-array"><a href="#181-rotate-array" class="headerlink" title="181 rotate array"></a>181 rotate array</h2><p>逆向输出，reverse三次。<br>注意如果input[1,2,3] k=3; 输出[3,1,2];<br>所以要先对k进行操作，k = k%nums.length</p>
+<h2 id="217-Contains-Duplicate"><a href="#217-Contains-Duplicate" class="headerlink" title="217 Contains Duplicate"></a>217 Contains Duplicate</h2><p>注意分析time complexity 和 space complexity 之间的trade off</p>
+<ol>
+<li>先Arrays.sort 然后循环一边看是不是有重复的<br>time O(NlogN) space O(1); 注意sort的时间复杂度是logN</li>
+<li>造一个hash set，循环数组，每遇到一个新的就add到set里，如果有遇到一个已经存在在hashset的，就       return true；如果循环完了都还没有遇到set里已经存在的 就return false；<br>time O(N) space O(N)</li>
+<li>也可以暴力求解；时间复杂度是O(N2);</li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/array/" rel="tag"># array</a>
+          
+            <a href="/tags/HashSet/" rel="tag"># HashSet</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/23/23Sep-122-152-162-169/" rel="next" title="23Sep 122 152 162 169">
+                <i class="fa fa-chevron-left"></i> 23Sep 122 152 162 169
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +427,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -372,8 +451,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -435,6 +523,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#181-rotate-array"><span class="nav-number">1.</span> <span class="nav-text">181 rotate array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#217-Contains-Duplicate"><span class="nav-number">2.</span> <span class="nav-text">217 Contains Duplicate</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -575,6 +679,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
