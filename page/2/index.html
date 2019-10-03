@@ -262,6 +262,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/13/关于asyn-setState-和array-push/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ludi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://wx3.sinaimg.cn/mw1024/70ec9014ly1fefje9jadmj20qo0qoq6i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="console.log('Goodbye World!')">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/13/关于asyn-setState-和array-push/" itemprop="url">关于asyn setState 和array.push</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-13T16:55:50-04:00">
+                2019-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##关于React中this.setState是async function</p>
+<p>React中的this.setState()是异步完成的，所以在setState之后立刻使用新的state，需要使用callback<br>this.setState({传入一个obj更新state},()=&gt;{在state更新之后执行的callback func})</p>
+<p>##JavaScript中array的push method</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [];</span><br><span class="line"><span class="keyword">var</span> item1 = &#123;<span class="attr">name</span>: <span class="number">1</span>, <span class="attr">data</span>: <span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line">items.push(item1);</span><br><span class="line"><span class="built_in">console</span>.log(items); <span class="comment">//[&#123;name: 1, data: 1&#125;]</span></span><br><span class="line"></span><br><span class="line">items = [];</span><br><span class="line">items = items.push(item1);</span><br><span class="line"><span class="built_in">console</span>.log(items); <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+<p>push return true or false</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/1medium3easy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -887,7 +1011,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -909,7 +1033,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
